@@ -14,24 +14,22 @@ function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Prepare the login data from formData state
     const loginData = {
       name: formData.name,
       password: formData.password,
     };
 
     try {
-      // Make an HTTP GET request to your Node.js login API
       const response = await fetch(
         `http://localhost:9000/users/login?name=${loginData.name}&password=${loginData.password}`
       );
 
-      if (response.ok) {
-        // Login successful
+      if (response.status === 200) {
         console.log("User logged in successfully");
         // You can perform any additional actions here, such as redirecting the user.
+      } else if (response.status === 401) {
+        console.error("Incorrect password");
       } else {
-        // Login failed
         console.error("User login failed");
       }
     } catch (error) {
