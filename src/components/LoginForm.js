@@ -23,6 +23,16 @@ function Login() {
       password: formData.password,
     };
 
+    if (!formData.name) {
+      alert("Name cannot be empty");
+      return;
+    }
+
+    if (!formData.password) {
+      alert("Password cannot be empty");
+      return;
+    }
+
     try {
       const response = await fetch(
         `http://localhost:9000/users/login?name=${loginData.name}&password=${loginData.password}`
