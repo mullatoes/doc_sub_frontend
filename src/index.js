@@ -8,8 +8,7 @@ import {
   Navigate,
   Routes,
 } from "react-router-dom";
-import RegistrationForm from "./components/RegistrationForm";
-import LoginForm from "./components/LoginForm";
+
 import Dashboard from "./components/Dashboard";
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
@@ -19,8 +18,6 @@ root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/register" element={<RegistrationForm />} />
-        <Route path="/login" element={<LoginForm />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
