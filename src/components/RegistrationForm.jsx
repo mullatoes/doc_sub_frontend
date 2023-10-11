@@ -2,21 +2,20 @@ import { useState } from "react";
 import "../RegistrationForm.css";
 import { useNavigate } from "react-router-dom";
 
-function RegistrationForm() {
+const RegistrationForm = () => {
   const navigate = useNavigate();
+  const baseUrl = "http://localhost:9000/";
 
   const [formData, setFormData] = useState({
     name: "",
     password: "",
   });
 
-  // Handle form input changes
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     const registrationData = {
@@ -35,23 +34,20 @@ function RegistrationForm() {
     }
 
     try {
-      // Make an HTTP POST request to your Node.js API
-      const response = await fetch("http://localhost:9000/users", {
+      const response = await fetch(`${baseUrl}users`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(registrationData), // Convert data to JSON format
+        body: JSON.stringify(registrationData),
       });
 
       if (response.ok) {
-        // Registration successful
         console.log("User registered successfully");
         alert("User registered successfully");
-        // You can perform any additional actions here, such as redirecting the user.
+
         navigate("/login");
       } else {
-        // Registration failed
         console.error("User registration failed");
       }
     } catch (error) {
@@ -59,10 +55,8 @@ function RegistrationForm() {
     }
   };
 
-  // Handle login form submission
   const handleLogin = (event) => {
     event.preventDefault();
-    // Redirect to the login page
     navigate("/login");
   };
 
@@ -104,6 +98,6 @@ function RegistrationForm() {
       </form>
     </div>
   );
-}
+};
 
 export default RegistrationForm;

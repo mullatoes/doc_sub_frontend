@@ -2,8 +2,9 @@ import { useState } from "react";
 import "../RegistrationForm.css";
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+const Login = () => {
   const navigate = useNavigate();
+  const baseUrl = "http://localhost:9000/";
 
   const [formData, setFormData] = useState({
     name: "",
@@ -35,12 +36,11 @@ function Login() {
 
     try {
       const response = await fetch(
-        `http://localhost:9000/users/login?name=${loginData.name}&password=${loginData.password}`
+        `${baseUrl}users/login?name=${loginData.name}&password=${loginData.password}`
       );
 
       if (response.status === 200) {
         console.log("User logged in successfully");
-        // You can perform any additional actions here, such as redirecting the user.
         navigate("/dashboard");
       } else if (response.status === 401) {
         console.error("Incorrect password");
@@ -54,7 +54,6 @@ function Login() {
 
   const handleRegisterClick = (event) => {
     event.preventDefault();
-    // Redirect to the login page
     navigate("/register");
   };
 
@@ -96,6 +95,6 @@ function Login() {
       </form>
     </div>
   );
-}
+};
 
 export default Login;

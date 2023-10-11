@@ -11,6 +11,8 @@ import {
 import RegistrationForm from "./components/RegistrationForm";
 import LoginForm from "./components/LoginForm";
 import Dashboard from "./components/Dashboard";
+import SignUp from "./components/SignUp";
+import SignIn from "./components/SignIn";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,8 +22,10 @@ root.render(
         <Route path="/register" element={<RegistrationForm />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin" element={<SignIn />} />
         {/* Redirect users to the login page if the URL is not recognized */}
-        <Route path="/*" element={<Navigate to="/login" />} />
+        <Route path="/*" element={<Navigate to="/signup" />} />
       </Routes>
     </Router>
   </React.StrictMode>
