@@ -23,7 +23,9 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="dashboard">
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+     
       {companies.map((company) => (
         <CompanyInfo
           key={company.name}
@@ -31,7 +33,8 @@ const Dashboard = () => {
           logoUrl={company.logo}
         />
       ))}
-    </div>
+      </div>
+    </>
   );
 };
 
