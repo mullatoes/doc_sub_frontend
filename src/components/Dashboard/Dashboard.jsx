@@ -1,6 +1,6 @@
 import React from "react";
-import CompanyInfo from "./CompanyInfo";
-import "./Dashboard.css";
+import CompanyInfo from "../Company/CompanyInfo";
+
 
 const Dashboard = () => {
   const companies = [

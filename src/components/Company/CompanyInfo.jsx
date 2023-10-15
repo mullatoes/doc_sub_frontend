@@ -1,7 +1,4 @@
 import React from "react";
-import "./LoginSignUp.css";
-import "./CompanyInfo.css";
-
 import { useState } from "react";
 
 const CompanyInfo = ({ companyName, logoUrl }) => {
