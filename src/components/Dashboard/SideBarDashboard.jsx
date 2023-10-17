@@ -1,4 +1,5 @@
 import React from "react";
+import Chart from "../charts/Chart";
 
 const SideBarDashboard = () => {
   return (
@@ -15,8 +16,9 @@ const SideBarDashboard = () => {
         </div>
       </div>
 
-      <div className="flex space-x-8 p-10">
-        <h2>More Companies</h2>
+      <div className="flex space-x-8 p-10 w-4/5">
+        <h2>Activity Tracker</h2>
+        <Chart />
       </div>
 
       <div className="flex space-x-8">
