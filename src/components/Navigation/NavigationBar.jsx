@@ -24,12 +24,12 @@ const navLinks = [
     icon: Clock3,
   },
   {
-    name: "Activity",
-    icon: Clock3,
-  },
-  {
     name: "Help Centre",
     icon: HelpCircleIcon,
+  },
+  {
+    name: "Log Out",
+    icon: ArrowRightLeft,
   },
 ];
 
